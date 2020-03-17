@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import JankenRepo from './JankenRepo'
+import Fetcher from './Fetcher'
 
-class JankenRepo {
-  create() {
-    return Promise.resolve({outcome: 'P1_WINS'})
-  }
-}
-
-const repo = new JankenRepo()
+const fetcher = new Fetcher()
+const repo = new JankenRepo(fetcher)
 
 ReactDOM.render(<App repo={repo}/>, document.getElementById('root'));
 
