@@ -4,7 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class JankenRepo {
+  create() {
+    return Promise.resolve({outcome: 'P1_WINS'})
+  }
+}
+
+const repo = new JankenRepo()
+
+ReactDOM.render(<App repo={repo}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
